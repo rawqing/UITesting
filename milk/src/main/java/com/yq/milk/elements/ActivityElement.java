@@ -1,17 +1,18 @@
 package com.yq.milk.elements;
 
+import android.support.annotation.NonNull;
 import android.view.View;
 
-import com.trubuzz.trubuzz.shell.Element;
-import com.trubuzz.trubuzz.utils.God;
+
+import com.yq.milk.utils.God;
 
 import org.hamcrest.Matcher;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static com.trubuzz.trubuzz.utils.DoIt.notEmpty;
 import static com.yq.milk.utils.DoIt.notEmpty;
+import static org.hamcrest.Matchers.allOf;
 
 /**
  * Created by king on 16/11/1.
@@ -185,6 +186,7 @@ public class ActivityElement implements Element<Matcher<View>>{
         return all(new ElementHandle().element2matcher(this));
     }
 
+    @NonNull
     private Matcher<View> all(List<Matcher<View>> list){
         return allOf(God.list2array(Matcher.class ,list));
     }

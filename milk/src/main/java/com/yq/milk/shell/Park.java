@@ -6,17 +6,15 @@ import android.support.test.espresso.ViewInteraction;
 import android.support.test.espresso.web.model.Atom;
 import android.view.View;
 
-import com.trubuzz.trubuzz.feature.custom.assertors.CustomAssert;
-import com.trubuzz.trubuzz.idlingResource.WaitStrategy;
-import com.trubuzz.trubuzz.shell.beautify.ActivityElement;
-import com.trubuzz.trubuzz.shell.beautify.AtomElement;
+import com.yq.milk.elements.ActivityElement;
+import com.yq.milk.elements.AtomElement;
+import com.yq.milk.elements.Element;
 
 import org.hamcrest.Matcher;
 
 import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.web.sugar.Web.onWebView;
-import static com.trubuzz.trubuzz.utils.DoIt.sleep;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasEntry;
 import static org.hamcrest.Matchers.is;
@@ -114,22 +112,22 @@ public class Park {
         return onData(hasEntry(equalTo(key), is(value)));
     }
 
-
-    /********************** then ***********************/
-    public static <E> CustomAssert then(Element<E> ele) {
-        return new CustomAssert(ele);
-    }
-
-
-    /********************** wait ***********************/
-    public static void waitFor(WaitStrategy waitStrategy ,int timesout) {
-        int out = timesout * 2;
-        do {
-            if (waitStrategy.isUntilNow()) {
-                return;
-            }
-            sleep(500);    // 等待0.5秒
-            out --;
-        } while (out == 0);
-    }
+//
+//    /********************** then ***********************/
+//    public static <E> CustomAssert then(Element<E> ele) {
+//        return new CustomAssert(ele);
+//    }
+//
+//
+//    /********************** wait ***********************/
+//    public static void waitFor(WaitStrategy waitStrategy ,int timesout) {
+//        int out = timesout * 2;
+//        do {
+//            if (waitStrategy.isUntilNow()) {
+//                return;
+//            }
+//            sleep(500);    // 等待0.5秒
+//            out --;
+//        } while (out == 0);
+//    }
 }

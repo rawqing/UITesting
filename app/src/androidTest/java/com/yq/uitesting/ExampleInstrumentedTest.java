@@ -4,6 +4,9 @@ import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
+import com.yq.milk.elements.ActivityElement;
+import com.yq.milk.elements.Element;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -23,6 +26,6 @@ public class ExampleInstrumentedTest {
 
         assertEquals("com.yq.uitesting", appContext.getPackageName());
 
-
+        Element e = new ActivityElement();
     }
 }

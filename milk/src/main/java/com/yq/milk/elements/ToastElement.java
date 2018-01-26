@@ -3,17 +3,16 @@ package com.yq.milk.elements;
 import android.support.test.espresso.ViewInteraction;
 import android.support.test.rule.ActivityTestRule;
 
-import com.trubuzz.trubuzz.constant.Env;
-import com.trubuzz.trubuzz.utils.God;
+
+import com.yq.milk.constant.Env;
+import com.yq.milk.utils.God;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.matcher.RootMatchers.withDecorView;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static com.trubuzz.trubuzz.feature.custom.matchers.CustomMatcher.withContainText;
-import static com.trubuzz.trubuzz.feature.custom.matchers.CustomMatcher.withRegexText;
-import static com.trubuzz.trubuzz.feature.custom.matchers.CustomMatcher.withWildcardText;
-import static com.trubuzz.trubuzz.shell.beautify.ToastElement.MsgType.intact;
-import static com.trubuzz.trubuzz.utils.DoIt.notEmpty;
+import static com.yq.milk.custom.matchers.CustomMatcher.withContainText;
+import static com.yq.milk.custom.matchers.CustomMatcher.withRegexText;
+import static com.yq.milk.custom.matchers.CustomMatcher.withWildcardText;
 import static com.yq.milk.elements.ToastElement.MsgType.intact;
 import static com.yq.milk.utils.DoIt.notEmpty;
 import static org.hamcrest.core.Is.is;

@@ -43,6 +43,7 @@ dependencies {
     compile 'org.jsoup:jsoup:1.10.3'
     compile 'com.esotericsoftware.yamlbeans:yamlbeans:1.12'
 
+    compile files('libs/JUnitParams-1.1.1.01.jar')
 
     testCompile 'junit:junit:4.12'
 }
