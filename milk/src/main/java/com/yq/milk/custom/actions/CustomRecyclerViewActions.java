@@ -13,7 +13,8 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
-import com.trubuzz.trubuzz.utils.DoIt;
+
+import com.yq.milk.utils.DoIt;
 
 import org.hamcrest.Matcher;
 
@@ -22,8 +23,8 @@ import java.util.Arrays;
 import static android.support.test.espresso.matcher.ViewMatchers.isAssignableFrom;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.internal.util.Checks.checkNotNull;
-import static com.trubuzz.trubuzz.constant.Env.VISIBILITY;
-import static com.trubuzz.trubuzz.utils.Judge.isVisible;
+import static com.yq.milk.constant.Env.VISIBILITY;
+import static com.yq.milk.utils.Judge.isVisible;
 import static org.hamcrest.Matchers.allOf;
 
 /**

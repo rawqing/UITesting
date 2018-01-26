@@ -1,7 +1,7 @@
 package com.yq.milk.custom.parameters.provider;
 
 import com.alibaba.fastjson.JSON;
-import com.trubuzz.trubuzz.feature.custom.parameters.GatherParameter;
+import com.yq.milk.custom.parameters.GatherParameter;
 
 import org.junit.runners.model.FrameworkMethod;
 
@@ -11,7 +11,8 @@ import java.util.List;
 
 import junitparams.custom.ParametersProvider;
 
-import static com.trubuzz.trubuzz.constant.Env.p_s;
+import static com.yq.milk.constant.Env.p_s;
+
 
 /**
  * Created by king on 2017/7/3.

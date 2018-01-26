@@ -12,7 +12,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 
-import com.trubuzz.trubuzz.constant.enumerate.Direction;
+
+import com.yq.milk.constant.enumerate.Direction;
 
 import org.hamcrest.Matcher;
 
@@ -95,7 +96,8 @@ public class CustomViewAction  {
      * @return
      */
     public static ViewAction swipeAsDirection(Direction direction, int fuzz, int swipe_distance, boolean checkVisible){
-        return new SwipeAsDirection(Swipe.FAST, direction, fuzz, swipe_distance, Press.FINGER, checkVisible);
+//        return new SwipeAsDirection(Swipe.FAST, direction, fuzz, swipe_distance, Press.FINGER, checkVisible);
+        return null;
     }
 
     /**

@@ -4,6 +4,7 @@ import android.support.test.espresso.NoMatchingViewException;
 import android.support.test.espresso.ViewAction;
 import android.support.test.espresso.ViewAssertion;
 import android.support.test.espresso.ViewInteraction;
+import android.support.test.espresso.action.ViewActions;
 import android.util.Log;
 
 import com.yq.milk.bTest.BaseTest;
@@ -11,6 +12,7 @@ import com.yq.milk.elements.Element;
 import com.yq.milk.utils.DoIt;
 import com.yq.milk.utils.Registor;
 
+import static android.support.test.espresso.action.ViewActions.click;
 import static com.yq.milk.shell.Park.getViewInteraction;
 
 /**
@@ -71,6 +73,14 @@ public class AdViewInteraction {
         }else{
             return perform(viewActions);
         }
+    }
+
+    /**
+     * 点击
+     * @return
+     */
+    public  AdViewInteraction click(){
+        return this.perform(ViewActions.click());
     }
     /**
      * 判断操作是否成功

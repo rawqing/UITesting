@@ -6,9 +6,9 @@ import android.util.Log;
 import com.esotericsoftware.yamlbeans.YamlException;
 import com.esotericsoftware.yamlbeans.YamlReader;
 import com.esotericsoftware.yamlbeans.YamlWriter;
-import com.trubuzz.trubuzz.shell.Password;
-import com.trubuzz.trubuzz.shell.UserName;
-import com.trubuzz.trubuzz.utils.FileRw;
+import com.yq.milk.beans.user.Password;
+import com.yq.milk.beans.user.UserName;
+import com.yq.milk.utils.FileRw;
 
 import java.io.File;
 import java.io.FileReader;
@@ -20,7 +20,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import static com.trubuzz.trubuzz.utils.God.getResources;
+import static com.yq.milk.utils.God.getResources;
 
 
 /**
@@ -47,8 +47,8 @@ public class UserStore {
         // 如果手机中不存在该文件则将资源文件中的内容写入
         File file = new File(filePath);
         if (!file.exists()) {
-            InputStream in = getResources().openRawResource(com.trubuzz.trubuzz.test.R.raw.user_store);
-            FileRw.copyFile(in, filePath);
+//            InputStream in = getResources().openRawResource(com.trubuzz.trubuzz.test.R.raw.user_store);
+//            FileRw.copyFile(in, filePath);
         }
     }
 

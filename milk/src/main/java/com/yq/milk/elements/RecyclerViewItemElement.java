@@ -15,7 +15,7 @@ import org.hamcrest.TypeSafeMatcher;
 
 import static android.support.test.espresso.matcher.ViewMatchers.isAssignableFrom;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static com.trubuzz.trubuzz.utils.Judge.isVisible;
+import static com.yq.milk.utils.Judge.isVisible;
 import static org.hamcrest.Matchers.allOf;
 
 /**

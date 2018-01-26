@@ -1,6 +1,7 @@
 package com.yq.milk.custom.parameters;
 
-import com.trubuzz.trubuzz.feature.custom.parameters.provider.YmlParameterProvider;
+
+import com.yq.milk.custom.parameters.provider.YmlParameterProvider;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

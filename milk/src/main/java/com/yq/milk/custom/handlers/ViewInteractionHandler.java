@@ -9,9 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.trubuzz.trubuzz.feature.custom.actions.CustomRecyclerViewActions;
-import com.trubuzz.trubuzz.shell.AdViewInteraction;
-import com.trubuzz.trubuzz.shell.Element;
+
+import com.yq.milk.custom.actions.CustomRecyclerViewActions;
+import com.yq.milk.elements.Element;
+import com.yq.milk.shell.AdViewInteraction;
 
 import org.hamcrest.Matcher;
 

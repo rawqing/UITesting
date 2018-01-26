@@ -3,14 +3,16 @@ package com.yq.milk.elements;
 import android.app.Activity;
 import android.view.View;
 
-import com.trubuzz.trubuzz.constant.Env;
-import com.trubuzz.trubuzz.utils.Find;
-import com.trubuzz.trubuzz.utils.God;
+
+import com.yq.milk.constant.Env;
+import com.yq.milk.utils.Find;
+import com.yq.milk.utils.God;
 
 import org.hamcrest.Matcher;
 
-import static com.trubuzz.trubuzz.feature.custom.matchers.CustomMatcher.withView;
-import static com.trubuzz.trubuzz.utils.DoIt.notEmpty;
+import static com.yq.milk.custom.matchers.CustomMatcher.withView;
+import static com.yq.milk.utils.DoIt.notEmpty;
+
 
 /**
  * Created by king on 16/11/22.

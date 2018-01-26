@@ -18,11 +18,12 @@ import android.view.WindowManager;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 
-import com.trubuzz.trubuzz.feature.custom.actions.CustomRecyclerViewActions;
-import com.trubuzz.trubuzz.shell.Element;
-import com.trubuzz.trubuzz.shell.beautify.ActivityElement;
-import com.trubuzz.trubuzz.shell.beautify.ToastElement;
-import com.trubuzz.trubuzz.test.common.CommonAction;
+
+import com.yq.milk.bTest.common.CommonAction;
+import com.yq.milk.custom.actions.CustomRecyclerViewActions;
+import com.yq.milk.elements.ActivityElement;
+import com.yq.milk.elements.Element;
+import com.yq.milk.elements.ToastElement;
 
 import org.hamcrest.Matcher;
 
@@ -35,12 +36,12 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isAssignableFrom;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withEffectiveVisibility;
-import static com.trubuzz.trubuzz.constant.Env.instrumentation;
-import static com.trubuzz.trubuzz.feature.custom.handlers.ViewInteractionHandler.getView;
-import static com.trubuzz.trubuzz.feature.custom.matchers.CustomMatcher.withView;
-import static com.trubuzz.trubuzz.shell.Park.given;
-import static com.trubuzz.trubuzz.utils.God.getMatchedView;
-import static com.trubuzz.trubuzz.utils.God.getViewWith;
+import static com.yq.milk.constant.Env.instrumentation;
+import static com.yq.milk.custom.handlers.ViewInteractionHandler.getView;
+import static com.yq.milk.custom.matchers.CustomMatcher.withView;
+import static com.yq.milk.shell.Park.given;
+import static com.yq.milk.utils.God.getMatchedView;
+import static com.yq.milk.utils.God.getViewWith;
 import static org.hamcrest.Matchers.allOf;
 
 /**

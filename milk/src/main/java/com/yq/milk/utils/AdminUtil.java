@@ -3,7 +3,8 @@ package com.yq.milk.utils;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
-import com.trubuzz.trubuzz.constant.Config;
+
+import com.yq.milk.constant.Config;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -15,10 +16,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import static com.trubuzz.trubuzz.constant.Config.ad_login_url;
-import static com.trubuzz.trubuzz.constant.Config.ad_sms_log_url;
-import static com.trubuzz.trubuzz.constant.Config.ad_user_mail;
-import static com.trubuzz.trubuzz.constant.Config.ad_user_password;
+import static com.yq.milk.constant.Config.ad_login_url;
+import static com.yq.milk.constant.Config.ad_user_mail;
+import static com.yq.milk.constant.Config.ad_user_password;
+
 
 /**
  * Created by king on 2017/6/21.

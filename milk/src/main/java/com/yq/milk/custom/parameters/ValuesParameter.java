@@ -1,6 +1,7 @@
 package com.yq.milk.custom.parameters;
 
-import com.trubuzz.trubuzz.feature.custom.parameters.provider.GatherParameterProvider;
+
+import com.yq.milk.custom.parameters.provider.GatherParameterProvider;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

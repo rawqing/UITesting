@@ -28,7 +28,7 @@ import java.util.regex.Pattern;
 
 import static android.support.test.espresso.core.deps.guava.base.Preconditions.checkNotNull;
 import static android.support.test.runner.lifecycle.Stage.RESUMED;
-import static com.trubuzz.trubuzz.constant.Env.instrumentation;
+import static com.yq.milk.constant.Env.instrumentation;
 
 /**
  * Created by king on 2016/9/5.
@@ -153,7 +153,7 @@ public class God {
 
     /**
      * 获得当前activity的name
-     * 格式同 {@link com.trubuzz.trubuzz.constant.AName} 中的值
+     * 格式同 {//@link com.trubuzz.trubuzz.constant.AName} 中的值
      * @param instrumentation
      * @return
      */

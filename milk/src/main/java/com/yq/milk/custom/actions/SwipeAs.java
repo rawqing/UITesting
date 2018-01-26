@@ -13,8 +13,8 @@ import org.hamcrest.Matcher;
 
 import java.util.Arrays;
 
-import static com.trubuzz.trubuzz.constant.Env.TAG;
-import static com.trubuzz.trubuzz.feature.custom.matchers.CustomMatcher.withAny;
+import static com.yq.milk.custom.matchers.CustomMatcher.withAny;
+
 
 /**
  * Created by king on 2017/7/4.
@@ -55,7 +55,7 @@ public class SwipeAs implements ViewAction {
 
         for (int tries = 0; tries < MAX_TRIES && status != Swiper.Status.SUCCESS; tries++) {
             try {
-                Log.i(TAG, "SwipeAs perform .swipe as : "+ Arrays.toString(startCoordinates)
+                Log.i("SwipeAs", "SwipeAs perform .swipe as : "+ Arrays.toString(startCoordinates)
                         + " -> "+ Arrays.toString(endCoordinates) +
                         " ; precision : "+ Arrays.toString(precision));
 

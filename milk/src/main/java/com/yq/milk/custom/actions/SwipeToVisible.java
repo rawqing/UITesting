@@ -7,10 +7,10 @@ import android.view.View;
 
 import org.hamcrest.Matcher;
 
-import static com.trubuzz.trubuzz.constant.Env.TAG;
-import static com.trubuzz.trubuzz.constant.Env.VISIBILITY;
-import static com.trubuzz.trubuzz.feature.custom.matchers.CustomMatcher.withAny;
-import static com.trubuzz.trubuzz.utils.Judge.isVisible;
+import static com.yq.milk.constant.Env.VISIBILITY;
+import static com.yq.milk.custom.matchers.CustomMatcher.withAny;
+import static com.yq.milk.utils.Judge.isVisible;
+
 
 /**
  * Created by king on 2017/7/4.
@@ -39,7 +39,7 @@ public class SwipeToVisible implements ViewAction {
     public void perform(UiController uiController, View view) {
         for(int i=0;i<MAX_TRIES;i++) {
             if (isVisible(view,VISIBILITY)) return;
-            Log.i(TAG, String.format("perform: swipe %s times",i ));
+            Log.i("SwipeToVisible", String.format("perform: swipe %s times",i ));
             swiper.perform(uiController ,view);
         }
     }

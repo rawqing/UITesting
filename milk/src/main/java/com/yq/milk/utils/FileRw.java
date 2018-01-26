@@ -3,7 +3,7 @@ package com.yq.milk.utils;
 import android.util.Log;
 
 import com.esotericsoftware.yamlbeans.YamlReader;
-import com.trubuzz.trubuzz.constant.Env;
+import com.yq.milk.constant.Env;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -18,16 +18,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import static com.trubuzz.trubuzz.constant.Config.ad_log_cookie_key;
-import static com.trubuzz.trubuzz.constant.Config.ad_log_default_cookie;
-import static com.trubuzz.trubuzz.constant.Env.TAG;
-import static com.trubuzz.trubuzz.utils.God.getResources;
+import static com.yq.milk.constant.Config.ad_log_cookie_key;
+import static com.yq.milk.constant.Config.ad_log_default_cookie;
+import static com.yq.milk.utils.God.getResources;
+
 
 /**
  * Created by king on 2017/6/26.
  */
 
 public class FileRw {
+
+    private static final String TAG = "FileRw";
 
     /**
      * 判断文件是否存在或是否创建成功

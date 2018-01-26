@@ -6,6 +6,8 @@ import android.support.test.espresso.web.model.ElementReference;
 import android.support.test.espresso.web.model.WindowReference;
 import android.support.test.espresso.web.sugar.Web;
 
+import com.yq.milk.elements.Element;
+
 import java.util.concurrent.TimeUnit;
 
 /**

@@ -2,13 +2,13 @@ package com.yq.milk.bTest;
 
 import android.util.Log;
 
-import com.trubuzz.trubuzz.constant.Env;
-import com.trubuzz.trubuzz.constant.enumerate.TestResult;
-import com.trubuzz.trubuzz.report.CaseBean;
-import com.trubuzz.trubuzz.report.ClassBean;
-import com.trubuzz.trubuzz.report.SuiteBean;
-import com.trubuzz.trubuzz.utils.God;
-import com.trubuzz.trubuzz.utils.Registor;
+import com.yq.milk.beans.report.CaseBean;
+import com.yq.milk.beans.report.ClassBean;
+import com.yq.milk.beans.report.SuiteBean;
+import com.yq.milk.constant.Env;
+import com.yq.milk.constant.enumerate.TestResult;
+import com.yq.milk.utils.God;
+import com.yq.milk.utils.Registor;
 
 import org.junit.rules.TestName;
 import org.junit.runner.Description;
@@ -18,10 +18,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.trubuzz.trubuzz.constant.enumerate.TestResult.FAILED;
-import static com.trubuzz.trubuzz.constant.enumerate.TestResult.SKIPPED;
-import static com.trubuzz.trubuzz.constant.enumerate.TestResult.SUCCEEDED;
-import static com.trubuzz.trubuzz.constant.enumerate.TestResult.UNCALIBRATED;
+import static com.yq.milk.constant.enumerate.TestResult.FAILED;
+import static com.yq.milk.constant.enumerate.TestResult.SKIPPED;
+import static com.yq.milk.constant.enumerate.TestResult.SUCCEEDED;
+import static com.yq.milk.constant.enumerate.TestResult.UNCALIBRATED;
 
 /**
  * Created by king on 2016/9/20.

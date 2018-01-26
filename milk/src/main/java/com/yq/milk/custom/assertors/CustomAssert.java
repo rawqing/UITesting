@@ -1,6 +1,7 @@
 package com.yq.milk.custom.assertors;
 
-import com.trubuzz.trubuzz.shell.Element;
+
+import com.yq.milk.elements.Element;
 
 import static android.support.test.espresso.assertion.ViewAssertions.doesNotExist;
 

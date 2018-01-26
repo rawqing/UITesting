@@ -20,8 +20,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.trubuzz.trubuzz.constant.Config.ad_domain;
-import static com.trubuzz.trubuzz.constant.Config.ad_path;
+import static com.yq.milk.constant.Config.ad_domain;
+import static com.yq.milk.constant.Config.ad_path;
 
 
 /**

@@ -1,6 +1,7 @@
 package com.yq.milk.constant.enumerate;
 
-import com.trubuzz.trubuzz.constant.Config;
+
+import com.yq.milk.constant.Config;
 
 /**
  * Created by king on 2017/7/5.

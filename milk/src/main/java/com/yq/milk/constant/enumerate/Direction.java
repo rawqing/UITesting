@@ -1,6 +1,7 @@
 package com.yq.milk.constant.enumerate;
 
-import com.trubuzz.trubuzz.utils.ScreenRectangle;
+
+import com.yq.milk.utils.ScreenRectangle;
 
 /**
  * Created by king on 16/12/9.

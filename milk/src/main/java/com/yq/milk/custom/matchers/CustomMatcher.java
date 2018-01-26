@@ -17,9 +17,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.trubuzz.trubuzz.constant.Env;
-import com.trubuzz.trubuzz.utils.God;
-import com.trubuzz.trubuzz.utils.Judge;
+
+import com.yq.milk.constant.Env;
+import com.yq.milk.utils.God;
+import com.yq.milk.utils.Judge;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;

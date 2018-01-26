@@ -6,14 +6,16 @@ import android.support.test.espresso.action.PrecisionDescriber;
 import android.support.test.espresso.action.Swiper;
 import android.view.View;
 
-import com.trubuzz.trubuzz.constant.enumerate.Direction;
+
+import com.yq.milk.constant.enumerate.Direction;
 
 import org.hamcrest.Matcher;
 
-import static com.trubuzz.trubuzz.constant.Env.VISIBILITY;
-import static com.trubuzz.trubuzz.feature.custom.matchers.CustomMatcher.withAny;
-import static com.trubuzz.trubuzz.utils.God.getScreenRectangle;
-import static com.trubuzz.trubuzz.utils.Judge.isVisible;
+import static com.yq.milk.constant.Env.VISIBILITY;
+import static com.yq.milk.custom.matchers.CustomMatcher.withAny;
+import static com.yq.milk.utils.God.getScreenRectangle;
+import static com.yq.milk.utils.Judge.isVisible;
+
 
 /**
  * Created by king on 2017/7/4.

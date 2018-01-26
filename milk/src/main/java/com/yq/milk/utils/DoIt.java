@@ -11,9 +11,10 @@ import android.support.test.uiautomator.UiDevice;
 import android.util.Log;
 import android.view.View;
 
-import com.trubuzz.trubuzz.constant.Env;
-import com.trubuzz.trubuzz.shell.Password;
-import com.trubuzz.trubuzz.shell.UserName;
+
+import com.yq.milk.beans.user.Password;
+import com.yq.milk.beans.user.UserName;
+import com.yq.milk.constant.Env;
 
 import java.io.BufferedWriter;
 import java.io.File;

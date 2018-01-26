@@ -2,8 +2,9 @@ package com.yq.milk.elements;
 
 import android.view.View;
 
-import com.trubuzz.trubuzz.shell.MIterable;
-import com.trubuzz.trubuzz.utils.God;
+
+import com.yq.milk.shell.selfImp.MIterable;
+import com.yq.milk.utils.God;
 
 import org.hamcrest.Matcher;
 
@@ -20,11 +21,12 @@ import static android.support.test.espresso.matcher.ViewMatchers.withHint;
 import static android.support.test.espresso.matcher.ViewMatchers.withParent;
 import static android.support.test.espresso.matcher.ViewMatchers.withResourceName;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static com.trubuzz.trubuzz.feature.custom.matchers.CustomMatcher.hasSiblingNoSelf;
-import static com.trubuzz.trubuzz.feature.custom.matchers.CustomMatcher.withCousin;
-import static com.trubuzz.trubuzz.feature.custom.matchers.CustomMatcher.withIndex;
-import static com.trubuzz.trubuzz.feature.custom.matchers.CustomMatcher.withUncle;
-import static com.trubuzz.trubuzz.utils.DoIt.notEmpty;
+import static com.yq.milk.custom.matchers.CustomMatcher.hasSiblingNoSelf;
+import static com.yq.milk.custom.matchers.CustomMatcher.withCousin;
+import static com.yq.milk.custom.matchers.CustomMatcher.withIndex;
+import static com.yq.milk.custom.matchers.CustomMatcher.withUncle;
+import static com.yq.milk.utils.DoIt.notEmpty;
+import static org.hamcrest.Matchers.allOf;
 
 /**
  * Created by king on 16/12/14.

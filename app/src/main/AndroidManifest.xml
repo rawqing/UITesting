@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yq.uitesting">
 
+    <!--<instrumentation-->
+        <!--android:name="com.yq.uitesting.MyRunner"-->
+        <!--android:functionalTest="false"-->
+        <!--android:handleProfiling="false"-->
+        <!--android:label="Tests for com.trubuzz.trubuzz"-->
+        <!--android:targetPackage="com.yq.uitesting" />-->
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <uses-library android:name="android.test.runner" />
         <activity
             android:name=".SettingsActivity"
             android:label="@string/app_name">

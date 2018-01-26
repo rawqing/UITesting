@@ -15,7 +15,7 @@ import static android.support.test.espresso.web.webdriver.Locator.NAME;
 import static android.support.test.espresso.web.webdriver.Locator.PARTIAL_LINK_TEXT;
 import static android.support.test.espresso.web.webdriver.Locator.TAG_NAME;
 import static android.support.test.espresso.web.webdriver.Locator.XPATH;
-import static com.trubuzz.trubuzz.utils.DoIt.notEmpty;
+import static com.yq.milk.utils.DoIt.notEmpty;
 
 /**
  * Created by king on 16/11/8.

@@ -1,6 +1,7 @@
 package com.yq.milk.custom.parameters.provider;
 
-import com.trubuzz.trubuzz.feature.custom.parameters.ValuesParameter;
+
+import com.yq.milk.custom.parameters.ValuesParameter;
 
 import org.junit.runners.model.FrameworkMethod;
 

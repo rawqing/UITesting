@@ -4,7 +4,8 @@ import android.support.test.espresso.AmbiguousViewMatcherException;
 import android.util.Log;
 import android.view.View;
 
-import com.trubuzz.trubuzz.shell.Element;
+
+import com.yq.milk.elements.Element;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.support.test.espresso.Espresso.onView;
-import static com.trubuzz.trubuzz.feature.custom.actions.CustomViewAction.nothing;
+import static com.yq.milk.custom.actions.CustomViewAction.nothing;
 
 /**
  * Created by king on 16/12/6.

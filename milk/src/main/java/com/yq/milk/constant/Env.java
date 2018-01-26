@@ -4,7 +4,8 @@ import android.app.Instrumentation;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.uiautomator.UiDevice;
 
-import com.trubuzz.trubuzz.constant.enumerate.Condition;
+
+import com.yq.milk.constant.enumerate.Condition;
 
 import java.io.File;
 

@@ -1,9 +1,10 @@
 package com.yq.milk.custom.parameters.provider;
 
-import com.trubuzz.trubuzz.constant.Env;
-import com.trubuzz.trubuzz.feature.custom.parameters.YamlFileName;
-import com.trubuzz.trubuzz.feature.custom.parameters.YmlParameter;
-import com.trubuzz.trubuzz.utils.MReflect;
+
+import com.yq.milk.constant.Env;
+import com.yq.milk.custom.parameters.YamlFileName;
+import com.yq.milk.custom.parameters.YmlParameter;
+import com.yq.milk.utils.MReflect;
 
 import org.junit.runners.model.FrameworkMethod;
 
@@ -14,9 +15,10 @@ import java.util.Map;
 
 import junitparams.custom.ParametersProvider;
 
-import static com.trubuzz.trubuzz.utils.DoIt.castObject;
-import static com.trubuzz.trubuzz.utils.DoIt.list2array;
-import static com.trubuzz.trubuzz.utils.FileRw.readYamlFile;
+import static com.yq.milk.utils.DoIt.castObject;
+import static com.yq.milk.utils.DoIt.list2array;
+import static com.yq.milk.utils.FileRw.readYamlFile;
+
 
 /**
  * Created by king on 2017/7/14.

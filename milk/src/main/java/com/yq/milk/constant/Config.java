@@ -1,18 +1,20 @@
 package com.yq.milk.constant;
 
-import com.trubuzz.trubuzz.constant.enumerate.ImageStrategy;
-import com.trubuzz.trubuzz.utils.DoIt;
-import com.trubuzz.trubuzz.utils.FileRw;
-import com.trubuzz.trubuzz.utils.Judge;
-import com.trubuzz.trubuzz.utils.Kvp;
-import com.trubuzz.trubuzz.utils.MReflect;
+
+import com.yq.milk.constant.enumerate.ImageStrategy;
+import com.yq.milk.utils.DoIt;
+import com.yq.milk.utils.FileRw;
+import com.yq.milk.utils.Judge;
+import com.yq.milk.utils.Kvp;
+import com.yq.milk.utils.MReflect;
 
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
-import static com.trubuzz.trubuzz.utils.God.getResources;
+import static com.yq.milk.utils.God.getResources;
+
 
 /**
  * Created by king on 2017/7/17.
@@ -25,13 +27,13 @@ public class Config {
         int id = 0;
         switch (Env.condition) {
             case DEV:
-                id = com.trubuzz.trubuzz.test.R.raw.config_dev;
+//                id = com.trubuzz.trubuzz.test.R.raw.config_dev;
                 break;
             case CN:
-                id = com.trubuzz.trubuzz.test.R.raw.config_cn;
+//                id = com.trubuzz.trubuzz.test.R.raw.config_cn;
                 break;
             case GLOBAL:
-                id = com.trubuzz.trubuzz.test.R.raw.config_global;
+//                id = com.trubuzz.trubuzz.test.R.raw.config_global;
                 break;
         }
         List list = FileRw.readYamlFile(getResources().openRawResource(id));
