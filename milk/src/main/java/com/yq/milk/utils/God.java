@@ -26,9 +26,9 @@ import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static android.support.test.espresso.core.deps.guava.base.Preconditions.checkNotNull;
 import static android.support.test.runner.lifecycle.Stage.RESUMED;
 import static com.yq.milk.constant.Env.instrumentation;
+import static kotlin.jvm.internal.Intrinsics.checkNotNull;
 
 /**
  * Created by king on 2016/9/5.

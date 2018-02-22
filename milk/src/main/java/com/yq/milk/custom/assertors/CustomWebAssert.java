@@ -9,7 +9,7 @@ import org.hamcrest.Matcher;
 import org.hamcrest.StringDescription;
 
 import static android.support.test.espresso.matcher.ViewMatchers.assertThat;
-import static android.support.test.espresso.web.deps.guava.base.Preconditions.checkNotNull;
+import static kotlin.jvm.internal.Intrinsics.checkNotNull;
 
 /**
  * Created by king on 2016/10/21.
