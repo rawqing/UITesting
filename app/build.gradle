@@ -4,16 +4,15 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 27
+    buildToolsVersion "$buildTools_version"
     defaultConfig {
         applicationId "com.yq.uitesting"
         minSdkVersion 19
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
 //        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-//        testInstrumentationRunner "com.yq.uitesting.MyRunner"
         testInstrumentationRunner "com.yq.milk.runner.AdRunner"
         multiDexEnabled true
     }
@@ -28,15 +27,11 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.android.support:support-v4:26.+'
+    compile "com.android.support:appcompat-v7:$build_version"
+    compile "com.android.support:support-v4:$build_version"
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
     testCompile 'junit:junit:4.12'
 
-//    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-//        exclude group: 'com.android.support', module: 'support-annotations'
-//    })
-//    androidTestCompile 'com.android.support.test:runner:0.5'
     androidTestCompile project(':milk')
 }
