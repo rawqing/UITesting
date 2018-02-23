@@ -18,8 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import static com.yq.milk.constant.Config.ad_log_cookie_key;
-import static com.yq.milk.constant.Config.ad_log_default_cookie;
 import static com.yq.milk.utils.God.getResources;
 
 
@@ -143,19 +141,7 @@ public class FileRw {
         return value;
     }
 
-    /**
-     * 获取预置的cookie , 先从设备上的配置文件上取 ,
-     *      若没取到则从预置类中取
-     * @param fileName
-     * @return
-     */
-    public static Kvp<String, String> getLogCookie(String fileName){
-        String cvalue = readProperty(fileName, ad_log_cookie_key);
-        if (cvalue.isEmpty()) {
-            return ad_log_default_cookie;
-        }
-        return new Kvp<>(ad_log_cookie_key, cvalue);
-    }
+
 
     /**
      * 读取 Assets 资源中的 yml 文件

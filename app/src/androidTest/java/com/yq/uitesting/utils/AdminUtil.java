@@ -1,10 +1,16 @@
-package com.yq.milk.utils;
+package com.yq.uitesting.utils;
 
 import android.support.annotation.Nullable;
 import android.util.Log;
 
 
-import com.yq.milk.constant.Config;
+import com.yq.milk.utils.DoHttp;
+import com.yq.milk.utils.DoIt;
+import com.yq.milk.utils.FileRw;
+import com.yq.milk.utils.God;
+import com.yq.milk.utils.HtmlParser;
+import com.yq.milk.utils.Kvp;
+import com.yq.uitesting.Config;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -16,9 +22,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import static com.yq.milk.constant.Config.ad_login_url;
-import static com.yq.milk.constant.Config.ad_user_mail;
-import static com.yq.milk.constant.Config.ad_user_password;
+import static com.yq.uitesting.Config.ad_log_cookie_file;
+import static com.yq.uitesting.Config.ad_log_cookie_key;
+import static com.yq.uitesting.Config.ad_log_default_cookie;
+import static com.yq.milk.utils.FileRw.readProperty;
+import static com.yq.uitesting.Config.ad_login_url;
+import static com.yq.uitesting.Config.ad_user_mail;
+import static com.yq.uitesting.Config.ad_user_password;
 
 
 /**
@@ -28,7 +38,7 @@ import static com.yq.milk.constant.Config.ad_user_password;
 
 public class AdminUtil {
     private final String TAG = "jcd_" + AdminUtil.class.getSimpleName();
-    private final Kvp<String, String> session = FileRw.getLogCookie(Config.ad_log_cookie_file);
+    private final Kvp<String, String> session = getLogCookie(ad_log_cookie_file);
     private final String tbody_select = "table.table.table-striped.table-hover>tbody";
     // 需format %s
     private final String sms_code_td = "tr>td:contains(%s) + td";
@@ -210,5 +220,19 @@ public class AdminUtil {
         Document doc = Jsoup.parse(html);
         Element toggle = doc.select(isLogin_token).first();
         return toggle != null;
+    }
+
+    /**
+     * 获取预置的cookie , 先从设备上的配置文件上取 ,
+     *      若没取到则从预置类中取
+     * @param fileName
+     * @return
+     */
+    public static Kvp<String, String> getLogCookie(String fileName){
+        String cvalue = readProperty(fileName, ad_log_cookie_key);
+        if (cvalue.isEmpty()) {
+            return ad_log_default_cookie;
+        }
+        return new Kvp<>(ad_log_cookie_key, cvalue);
     }
 }

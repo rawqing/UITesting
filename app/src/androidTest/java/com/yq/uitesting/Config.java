@@ -1,6 +1,7 @@
-package com.yq.milk.constant;
+package com.yq.uitesting;
 
 
+import com.yq.milk.constant.Env;
 import com.yq.milk.constant.enumerate.ImageStrategy;
 import com.yq.milk.utils.DoIt;
 import com.yq.milk.utils.FileRw;
@@ -9,7 +10,6 @@ import com.yq.milk.utils.Kvp;
 import com.yq.milk.utils.MReflect;
 
 import java.lang.reflect.Field;
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
@@ -56,11 +56,23 @@ public class Config {
 
 
     /*** admin相关 ***/
+    public static String ad_log_cookie_key ;
+    public static String ad_log_cookie_value ;
+    public static Kvp<String,String> ad_log_default_cookie = new Kvp<>(ad_log_cookie_key, ad_log_cookie_value);
+    public static String ad_log_cookie_file ;
+    public static String ad_sms_log_url ;
+    public static String ad_login_url ;
     public static String ad_domain ;
     public static String ad_path ;
+    public static String ad_user_mail ;
+    public static String ad_user_password ;
 
     /*** 图像验证码 ***/
+    public static ImageStrategy CURRENT_IMAGE_STRATEGY ;
     public static String FIXED_CODE ;
+
+    /*** 默认国别码 ***/
+    public static String default_country_code;
 
     /*** 自动化生成用户名 ***/
     public static String email_name_prefix ;    // 邮箱前缀
