@@ -3,9 +3,7 @@ package com.yq.milk.bTest.common;
 import android.util.Log;
 
 
-import com.yq.milk.constant.AName;
 import com.yq.milk.elements.ToastElement;
-import com.yq.milk.utils.DoIt;
 import com.yq.milk.utils.God;
 
 import org.junit.Assert;

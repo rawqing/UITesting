@@ -18,6 +18,9 @@ import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static com.yq.milk.custom.assertors.CustomAssert.textEndsWith;
+import static com.yq.milk.custom.assertors.CustomAssert.textEq;
+import static com.yq.milk.custom.assertors.CustomAssert.textStartsWith;
 import static com.yq.milk.shell.Park.given;
 import static com.yq.milk.utils.DoIt.sleep;
 import static org.junit.Assert.*;
@@ -43,7 +46,10 @@ public class ExampleInstrumentedTest extends BaseTest{
         AdViewInteraction e = new ActivityElement().setChildren(new ActivityElement().setId("title").setText("General")).goal();
         AdViewInteraction dn = new ActivityElement().setText("Display name").goal();
         e.click();
-        dn.check(matches(withText("Display name")));
+        dn.check(textEq("Display name"));
+        dn.check(textEndsWith("nam"));
+        dn.check(textStartsWith("Display"));
+
         sleep(2000);
     }
 }

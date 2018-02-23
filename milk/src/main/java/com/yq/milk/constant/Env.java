@@ -34,7 +34,7 @@ public class Env {
     public final static String test_data_root_dir = "test_data";
 
     // 测试报告名称
-    public static final String reportName = "聚财道 app 2.0 Android 自动化测试报告";
+    public static final String reportName = "Android 自动化测试报告";
 
     public static final String cacheHeadImage = "head.png";
 

@@ -6,13 +6,17 @@ import android.support.test.espresso.ViewAssertion;
 import android.support.test.espresso.ViewInteraction;
 import android.support.test.espresso.action.ViewActions;
 import android.util.Log;
+import android.view.View;
 
 import com.yq.milk.bTest.BaseTest;
 import com.yq.milk.elements.Element;
 import com.yq.milk.utils.DoIt;
 import com.yq.milk.utils.Registor;
 
+import org.hamcrest.Matcher;
+
 import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static com.yq.milk.shell.Park.getViewInteraction;
 
 /**
@@ -131,6 +135,15 @@ public class AdViewInteraction {
         return check(5 , viewAssert);
     }
 
+    public AdViewInteraction check(final Matcher<View> matcher) {
+        return check(matches(matcher));
+    }
+    /**
+     * 尝试check
+     * @param isTry
+     * @param viewAssert
+     * @return
+     */
     public AdViewInteraction check(boolean isTry ,final ViewAssertion viewAssert){
         if(isTry){
             try {
