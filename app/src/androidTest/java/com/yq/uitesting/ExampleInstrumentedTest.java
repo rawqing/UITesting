@@ -3,17 +3,21 @@ package com.yq.uitesting;
 import android.app.Activity;
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
+import android.support.test.espresso.ViewAssertion;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.yq.milk.bTest.BaseTest;
 import com.yq.milk.elements.ActivityElement;
 import com.yq.milk.elements.Element;
+import com.yq.milk.shell.AdViewInteraction;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static com.yq.milk.shell.Park.given;
 import static com.yq.milk.utils.DoIt.sleep;
 import static org.junit.Assert.*;
@@ -36,9 +40,10 @@ public class ExampleInstrumentedTest extends BaseTest{
 
         assertEquals("com.yq.uitesting", appContext.getPackageName());
 
-        Element e = new ActivityElement().setChildren(new ActivityElement().setId("title").setText("General"));
-        given(e).click();
-
+        AdViewInteraction e = new ActivityElement().setChildren(new ActivityElement().setId("title").setText("General")).goal();
+        AdViewInteraction dn = new ActivityElement().setText("Display name").goal();
+        e.click();
+        dn.check(matches(withText("Display name")));
         sleep(2000);
     }
 }

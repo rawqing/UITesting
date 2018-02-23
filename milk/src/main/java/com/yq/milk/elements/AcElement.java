@@ -1,27 +1,22 @@
 package com.yq.milk.elements;
 
-import android.support.annotation.NonNull;
+import android.support.test.espresso.ViewInteraction;
 import android.view.View;
 
-
 import com.yq.milk.shell.AdViewInteraction;
-import com.yq.milk.shell.selfImp.MIterable;
-import com.yq.milk.utils.God;
+import com.yq.milk.shell.ViewInteractionSuper;
 
 import org.hamcrest.Matcher;
 
 import java.util.Arrays;
-import java.util.List;
 
-import static com.yq.milk.shell.Park.given;
 import static com.yq.milk.utils.DoIt.notEmpty;
-import static org.hamcrest.Matchers.allOf;
 
 /**
  * Created by king on 16/11/1.
  */
 
-public class ActivityElement implements Element<Matcher<View>>{
+public class AcElement extends ViewInteractionSuper implements Element<Matcher<View>> {
     private String id;
     private String text;
     private String hint;
@@ -37,7 +32,15 @@ public class ActivityElement implements Element<Matcher<View>>{
     private Matcher[] matchers;
     private boolean dis = true;
     private String content_desc;
-    private ActivityElement self;
+    private AcElement self;
+
+    public AcElement(Element viewElement) {
+        super(viewElement);
+    }
+
+    public AcElement(ViewInteraction viewInteraction) {
+        super(viewInteraction);
+    }
 
     String getId() {
         return id;
@@ -99,87 +102,87 @@ public class ActivityElement implements Element<Matcher<View>>{
         return content_desc;
     }
 
-    ActivityElement getSelf() {
+    AcElement getSelf() {
         return self;
     }
 
-    public ActivityElement setSelf(ActivityElement self) {
+    public AcElement setSelf(AcElement self) {
         this.self = self;
         return this;
     }
 
-    public ActivityElement setDescendant(Element<Matcher<View>> descendant) {
+    public AcElement setDescendant(Element<Matcher<View>> descendant) {
         this.descendant = descendant;
         return this;
     }
 
-    public ActivityElement setAncestor(Element<Matcher<View>> ancestor) {
+    public AcElement setAncestor(Element<Matcher<View>> ancestor) {
         this.ancestor = ancestor;
         return this;
     }
 
-    public ActivityElement setId(String id) {
+    public AcElement setId(String id) {
         this.id = id;
         return this;
     }
 
-    public ActivityElement setText(String text) {
+    public AcElement setText(String text) {
         this.text = text;
         return this;
     }
 
-    public ActivityElement setHint(String hint) {
+    public AcElement setHint(String hint) {
         this.hint = hint;
         return this;
     }
 
-    public ActivityElement setChildren(Element<Matcher<View>>... children) {
+    public AcElement setChildren(Element<Matcher<View>>... children) {
         this.children = children;
         return this;
     }
 
-    public ActivityElement setSiblings(Element<Matcher<View>>... siblings) {
+    public AcElement setSiblings(Element<Matcher<View>>... siblings) {
         this.siblings = siblings;
         return this;
     }
 
-    public ActivityElement setCousinry(Element<Matcher<View>>... cousinry) {
+    public AcElement setCousinry(Element<Matcher<View>>... cousinry) {
         this.cousinry = cousinry;
         return this;
     }
 
-    public ActivityElement setParent(Element<Matcher<View>> parent) {
+    public AcElement setParent(Element<Matcher<View>> parent) {
         this.parent = parent;
         return this;
     }
 
-    public ActivityElement setUncle(Element<Matcher<View>> uncle) {
+    public AcElement setUncle(Element<Matcher<View>> uncle) {
         this.uncle = uncle;
         return this;
     }
 
-    public ActivityElement setIndex(int index) {
+    public AcElement setIndex(int index) {
         this.index = index;
         return this;
     }
 
-    public ActivityElement setAssignableClass(Class<? extends View> assignableClass) {
+    public AcElement setAssignableClass(Class<? extends View> assignableClass) {
         this.assignableClass = assignableClass;
         return this;
     }
 
     @SafeVarargs
-    final public <T> ActivityElement  setMatchers(Matcher<? super T>... matchers) {
+    final public <T> AcElement setMatchers(Matcher<? super T>... matchers) {
         this.matchers = matchers;
         return this;
     }
 
-    public ActivityElement setDis(boolean dis) {
+    public AcElement setDis(boolean dis) {
         this.dis = dis;
         return this;
     }
 
-    public ActivityElement setContent_desc(String content_desc) {
+    public AcElement setContent_desc(String content_desc) {
         this.content_desc = content_desc;
         return this;
     }
@@ -187,12 +190,12 @@ public class ActivityElement implements Element<Matcher<View>>{
     @Override
     public Matcher<View> way() {
         ElementHandle elementHandle = new ElementHandle();
-        return elementHandle.all(elementHandle.element2matcher(this));
+        return elementHandle.all(elementHandle.element2matcher(null));
     }
 
     @Override
     public AdViewInteraction goal() {
-        return given(this.way());
+        return null;
     }
 
 

@@ -232,10 +232,6 @@ public class God {
         int length = list.size();
         T [] ts = (T[]) Array.newInstance(clz , length);
         return list.toArray(ts);
-//        for (int i = 0; i<length; i++) {
-//            ts[i] = list.get(i);
-//        }
-//        return ts;
     }
     public static <T> List<T> array2list(T [] arrays){
         List<T> list = new ArrayList<T>();

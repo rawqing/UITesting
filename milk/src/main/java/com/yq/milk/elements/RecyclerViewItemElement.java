@@ -9,12 +9,15 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewParent;
 
+import com.yq.milk.shell.AdViewInteraction;
+
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
 
 import static android.support.test.espresso.matcher.ViewMatchers.isAssignableFrom;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static com.yq.milk.shell.Park.given;
 import static com.yq.milk.utils.Judge.isVisible;
 import static org.hamcrest.Matchers.allOf;
 
@@ -139,6 +142,11 @@ public class RecyclerViewItemElement implements Element<Matcher<View>> {
             return this.atMatcher(findMatcher);
         }
         return null;
+    }
+
+    @Override
+    public AdViewInteraction goal() {
+        return given(this.way());
     }
 
     public static int getPosition(final ViewInteraction viewInteraction , final Matcher<View> viewMatcher){

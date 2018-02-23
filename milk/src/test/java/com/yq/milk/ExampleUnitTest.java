@@ -12,6 +12,11 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+//        Sub sub = new Sub("li","fang");
+        Sub sub = new Sub();
+        sub.lName = "li";
+        sub.fName = "wang";
+
+        sub.say("hello");
     }
 }

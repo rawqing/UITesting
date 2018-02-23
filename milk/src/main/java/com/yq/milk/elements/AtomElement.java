@@ -3,6 +3,7 @@ package com.yq.milk.elements;
 import android.support.test.espresso.web.model.Atom;
 
 import com.alibaba.fastjson.JSON;
+import com.yq.milk.shell.AdViewInteraction;
 
 import static android.support.test.espresso.web.webdriver.DriverAtoms.findElement;
 import static android.support.test.espresso.web.webdriver.DriverAtoms.selectFrameByIdOrName;
@@ -96,6 +97,11 @@ public class AtomElement implements Element<Atom> {
         if(notEmpty(xpath))             return findElement(XPATH ,xpath);
         if(notEmpty(frameIdOrName))    return selectFrameByIdOrName(frameIdOrName);
         if(frameIndex != -1)            return selectFrameByIndex(frameIndex);
+        return null;
+    }
+
+    @Override
+    public AdViewInteraction goal() {
         return null;
     }
 

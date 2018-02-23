@@ -5,12 +5,14 @@ import android.view.View;
 
 
 import com.yq.milk.constant.Env;
+import com.yq.milk.shell.AdViewInteraction;
 import com.yq.milk.utils.Find;
 import com.yq.milk.utils.God;
 
 import org.hamcrest.Matcher;
 
 import static com.yq.milk.custom.matchers.CustomMatcher.withView;
+import static com.yq.milk.shell.Park.given;
 import static com.yq.milk.utils.DoIt.notEmpty;
 
 
@@ -44,6 +46,11 @@ public class ViewElement implements Element<Matcher> {
 //        View view = activity.findViewById(Find.byShortId(viewId));
 //        return allOf(withView(getElementView(this)), isDisplayed());
         return withView(getElementView(this));
+    }
+
+    @Override
+    public AdViewInteraction goal() {
+        return given(this.way());
     }
 
     /**

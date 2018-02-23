@@ -5,6 +5,7 @@ import android.support.test.rule.ActivityTestRule;
 
 
 import com.yq.milk.constant.Env;
+import com.yq.milk.shell.AdViewInteraction;
 import com.yq.milk.utils.God;
 
 import static android.support.test.espresso.Espresso.onView;
@@ -14,6 +15,7 @@ import static com.yq.milk.custom.matchers.CustomMatcher.withContainText;
 import static com.yq.milk.custom.matchers.CustomMatcher.withRegexText;
 import static com.yq.milk.custom.matchers.CustomMatcher.withWildcardText;
 import static com.yq.milk.elements.ToastElement.MsgType.intact;
+import static com.yq.milk.shell.Park.given;
 import static com.yq.milk.utils.DoIt.notEmpty;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNot.not;
@@ -79,6 +81,11 @@ public class ToastElement implements Element<ViewInteraction>{
             }
         }
         return null;
+    }
+
+    @Override
+    public AdViewInteraction goal() {
+        return given(this.way());
     }
 
     /**

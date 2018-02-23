@@ -1,5 +1,6 @@
 package com.yq.milk.elements;
 
+import android.support.annotation.NonNull;
 import android.view.View;
 
 
@@ -137,5 +138,10 @@ public class ElementHandle {
      */
     public static String getElementText(ActivityElement activityElement) {
         return activityElement.getText();
+    }
+
+    @NonNull
+    public Matcher<View> all(List<Matcher<View>> list){
+        return allOf(new MIterable(list));
     }
 }

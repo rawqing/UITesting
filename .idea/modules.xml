@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/UITesting.iml" filepath="$PROJECT_DIR$/UITesting.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/milk/milk.iml" filepath="$PROJECT_DIR$/milk/milk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/milk_kotlin/milk_kotlin.iml" filepath="$PROJECT_DIR$/milk_kotlin/milk_kotlin.iml" />
     </modules>
   </component>
 </project>
