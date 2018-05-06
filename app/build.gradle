@@ -1,13 +1,15 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'io.qameta.allure'
+
+
 android {
     compileSdkVersion 27
-    buildToolsVersion "$buildTools_version"
+    buildToolsVersion '27.0.3'
     defaultConfig {
-        applicationId "com.yq.uitesting"
+//        applicationId "com.yq.uitesting"
+        applicationId "yq.com.eespuai"
         minSdkVersion 19
         targetSdkVersion 27
         versionCode 1
@@ -23,15 +25,53 @@ android {
         }
     }
 }
-
+//allure {
+//    version = '2.2.1'
+//    autoconfigure = true
+//    aspectjweaver = true
+//    allureJavaVersion = '2.6.0'
+//}
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile "com.android.support:appcompat-v7:$build_version"
-    compile "com.android.support:support-v4:$build_version"
+    implementation "com.android.support:appcompat-v7:$build_version"
+    implementation "com.android.support:support-v4:$build_version"
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
 
-    androidTestCompile project(':milk')
+    androidTestImplementation project(':milk')
+    androidTestImplementation "com.android.support:support-annotations:$build_version"
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$espresso_version"
+    androidTestImplementation 'com.android.support.test.uiautomator:uiautomator-v18:2.1.3'
+
+//    androidTestCompile "io.qameta.allure:allure-junit4:2.6.0"
+}
+task copyTask(type: Copy) {
+    from '/data/work/androidSpace/UITesting/app/apks/app-debug.apk'
+    into 'build/outputs/apk/debug/'
+    rename {
+        'app-debug.apk'
+    }
+}
+//connectedAndroidTest?.doFirst {
+//    from '/data/work/androidSpace/UITesting/app/apks/jcd-d394.apk'
+//    into 'build/outputs/apk/debug/'
+//    rename {
+//        'app-debug.apk'
+//    }
+//}
+//task assembleDebug(overwrite: true){}
+//tasks.findByName('assembleDebug')?.doLast {
+//    from '/data/work/androidSpace/UITesting/app/apks/jcd-d394.apk'
+//    into 'build/outputs/apk/debug/'
+//    rename {
+//        'app-debug.apk'
+//    }
+//}
+
+gradle.buildFinished {
+    copyTask.execute()
 }

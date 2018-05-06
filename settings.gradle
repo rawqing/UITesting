@@ -1,1 +1,1 @@
-include ':app', ':milk', ':milk_kotlin'
+include ':app', ':milk'

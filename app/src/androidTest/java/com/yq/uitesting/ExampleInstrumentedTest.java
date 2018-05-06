@@ -30,13 +30,13 @@ import static org.junit.Assert.*;
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
-@RunWith(AndroidJUnit4.class)
+//@RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest extends BaseTest{
 
     @Rule
     public ActivityTestRule<?> matr = new ActivityTestRule<>(SettingsActivity.class);
 
-    @Test
+//    @Test
     public void useAppContext() throws Exception {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
