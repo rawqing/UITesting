@@ -15,7 +15,7 @@ import static com.jlc.app.milk_mini.utils.DoIt.notEmpty;
  * Created by king on 16/11/1.
  */
 
-public class ActivityElement implements Element<Matcher<View>>{
+public class ActivityElement implements Element<Matcher<View>> {
     private String id;
     private String text;
     private String hint;
@@ -163,7 +163,7 @@ public class ActivityElement implements Element<Matcher<View>>{
     }
 
     @SafeVarargs
-    final public <T> ActivityElement  setMatchers(Matcher<? super T>... matchers) {
+    final public <T> ActivityElement setMatchers(Matcher<? super T>... matchers) {
         this.matchers = matchers;
         return this;
     }
