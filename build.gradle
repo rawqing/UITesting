@@ -5,6 +5,7 @@ buildscript {
     ext.buildTools_version = '26.0.2'
     ext.build_version = '27.1.1'
     ext.espresso_version = '3.0.1'
+    ext.mvn_local = 'file://~/.m2/repository'
     repositories {
         google()
         jcenter()
@@ -22,6 +23,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        mavenLocal()
     }
 }
 
