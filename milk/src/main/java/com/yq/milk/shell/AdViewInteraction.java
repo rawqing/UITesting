@@ -86,6 +86,24 @@ public class AdViewInteraction {
     public  AdViewInteraction click(){
         return this.perform(ViewActions.click());
     }
+
+    /**
+     * 注入字符串
+     * @param text
+     * @return
+     */
+    public  AdViewInteraction replaceText(String text){
+        return this.perform(ViewActions.replaceText(text));
+    }
+
+    /**
+     * 使用键盘输入字符串
+     * @param text
+     * @return
+     */
+    public  AdViewInteraction typeText(String text){
+        return this.perform(ViewActions.typeText(text));
+    }
     /**
      * 判断操作是否成功
      * @param v

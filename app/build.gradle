@@ -50,7 +50,7 @@ dependencies {
 //    androidTestCompile "io.qameta.allure:allure-junit4:2.6.0"
 }
 task copyTask(type: Copy) {
-    from '/data/work/androidSpace/UITesting/app/apks/app-debug.apk'
+    from 'apks/app-debug.apk'
     into 'build/outputs/apk/debug/'
     rename {
         'app-debug.apk'
@@ -71,7 +71,22 @@ task copyTask(type: Copy) {
 //        'app-debug.apk'
 //    }
 //}
-
-gradle.buildFinished {
-    copyTask.execute()
+android.testVariants.all {variant ->
+    variant.assemble.doLast {
+        copyTask.execute()
+    }
 }
+//android.applicationVariants.all { variant ->
+//    variant.testVariant.connectedInstrumentTest.doFirst {
+//
+//    }
+//    variant.outputs.all {
+//        def date = new Date()
+//        def formattedDate = date.format('yyyyMMdd')
+//
+//        outputFileName = "Trubuzz_${variant.name}_${variant.versionName}_${formattedDate}.apk"
+//    }
+//}
+//gradle.buildFinished {
+//    copyTask.execute()
+//}

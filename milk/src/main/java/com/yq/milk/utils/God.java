@@ -62,7 +62,7 @@ public class God {
     public static String getString (int str){
         return res.getString(str);
     }
-    public static String getString (String str){
+    private static String getString (String str){
         return str;
     }
     /**

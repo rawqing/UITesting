@@ -50,7 +50,7 @@ public class AdViewInteraction {
      * @param viewActions
      * @return
      */
-    public AdViewInteraction perform(final int times , final ViewAction... viewActions) {
+    public AdViewInteraction perform(final int times ,final ViewAction... viewActions) {
         String imagePath = "" ;
         sleep(500);
         for(int i = 1; i<times ; i++){
@@ -73,7 +73,7 @@ public class AdViewInteraction {
     public AdViewInteraction perform(final ViewAction... viewActions) {
         return this.perform(5 ,viewActions);
     }
-    public AdViewInteraction perform(boolean isTry , final ViewAction... viewActions) {
+    public AdViewInteraction perform(boolean isTry ,final ViewAction... viewActions) {
         if(isTry){
             try {
                 return perform(viewActions);
@@ -91,7 +91,7 @@ public class AdViewInteraction {
      * @param viewAssert
      * @return
      */
-    public AdViewInteraction check(final int times , final ViewAssertion viewAssert){
+    public AdViewInteraction check(final int times ,final ViewAssertion viewAssert){
         sleep(500);
         String imagePath = "" ;
         for(int i=1; i<times ; i++){
@@ -128,7 +128,7 @@ public class AdViewInteraction {
      * @param viewAssert
      * @return
      */
-    public AdViewInteraction check(boolean isTry , final ViewAssertion viewAssert){
+    public AdViewInteraction check(boolean isTry ,final ViewAssertion viewAssert){
         if(isTry){
             try {
                 return check(viewAssert);
@@ -167,7 +167,7 @@ public class AdViewInteraction {
      * 点击
      * @return
      */
-    public AdViewInteraction click(){
+    public  AdViewInteraction click(){
         return this.perform(ViewActions.click());
     }
 
@@ -176,7 +176,7 @@ public class AdViewInteraction {
      * @param text
      * @return
      */
-    public AdViewInteraction replaceText(String text){
+    public  AdViewInteraction replaceText(String text){
         return this.perform(ViewActions.replaceText(text));
     }
 
@@ -185,7 +185,7 @@ public class AdViewInteraction {
      * @param text
      * @return
      */
-    public AdViewInteraction typeText(String text){
+    public  AdViewInteraction typeText(String text){
         return this.perform(ViewActions.typeText(text));
     }
 
@@ -278,7 +278,7 @@ public class AdViewInteraction {
         WaitFor.waitForIdle(idle);
         return this;
     }
-    public AdViewInteraction waitFor(Idle idle , long step, long time){
+    public AdViewInteraction waitFor(Idle idle ,long step, long time){
         WaitFor.waitForIdle(idle ,step,time);
         return this;
     }

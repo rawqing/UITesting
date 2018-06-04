@@ -96,8 +96,8 @@ public class CustomViewAction  {
      * @return
      */
     public static ViewAction swipeAsDirection(Direction direction, int fuzz, int swipe_distance, boolean checkVisible){
-//        return new SwipeAsDirection(Swipe.FAST, direction, fuzz, swipe_distance, Press.FINGER, checkVisible);
-        return null;
+        return new SwipeAsDirection(Swipe.FAST, direction, fuzz, swipe_distance, Press.FINGER, checkVisible);
+//        return null;
     }
 
     /**

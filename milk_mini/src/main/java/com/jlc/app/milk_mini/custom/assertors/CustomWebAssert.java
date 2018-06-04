@@ -8,6 +8,7 @@ import android.webkit.WebView;
 import org.hamcrest.Matcher;
 import org.hamcrest.StringDescription;
 
+import static android.support.test.espresso.core.internal.deps.guava.base.Preconditions.checkNotNull;
 import static android.support.test.espresso.matcher.ViewMatchers.assertThat;
 
 /**
