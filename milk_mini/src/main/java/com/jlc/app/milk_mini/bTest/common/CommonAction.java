@@ -9,8 +9,8 @@ import org.junit.Assert;
 
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static com.jlc.app.milk_mini.custom.matchers.CustomMatcher.thisString;
 import static com.jlc.app.milk_mini.constant.Conf.instrumentation;
+import static com.jlc.app.milk_mini.custom.matchers.CustomMatcher.thisString;
 import static com.jlc.app.milk_mini.shell.Park.given;
 
 /**

@@ -13,12 +13,14 @@ import com.jlc.app.milk_mini.custom.actions.CustomViewAction;
 import com.jlc.app.milk_mini.elements.Element;
 import com.jlc.app.milk_mini.idlingResource.different.Idle;
 import com.jlc.app.milk_mini.idlingResource.different.WaitFor;
+import com.yq.allure2_androidj.common.Allure;
 
 import org.hamcrest.Matcher;
 
 import static android.support.test.espresso.assertion.ViewAssertions.doesNotExist;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static com.jlc.app.milk_mini.utils.DoIt.sleep;
+import static com.jlc.app.milk_mini.utils.Judge.isNone;
 
 /**
  * Created by king on 16/10/24.
@@ -26,7 +28,6 @@ import static com.jlc.app.milk_mini.utils.DoIt.sleep;
 
 public class AdViewInteraction {
     private static final String TAG = "jlc_AdViewInteraction";
-    private static String key = AdViewInteraction.class.toString();
     private Element viewElement ;
     private final ViewInteraction viewInteraction;
 
@@ -49,28 +50,30 @@ public class AdViewInteraction {
      * @param viewActions
      * @return
      */
-    public AdViewInteraction perform(final int times ,final ViewAction... viewActions) {
-        sleep(200);
+    public AdViewInteraction perform(final int times , final ViewAction... viewActions) {
+        String imagePath = "" ;
+        sleep(500);
         for(int i = 1; i<times ; i++){
             Log.i(TAG, String.format("perform: 开始第 %s 次匹配 ' %s ' .", i,this.toString()));
             if(canPerform(this.viewInteraction, viewActions)){
-//                DoIt.delFile((String) Registor.unReg(key));
+                if (! isNone(imagePath)) Allure.removeAttachment(imagePath);
                 return this;
             }else if(i==2 ){
                 //执行截图并保存文件名
-//                Registor.reg( key , ((BaseTest)Registor.peekReg(BaseTest.class.toString())).takeScreenshot());
+                imagePath = Allure.addAttachment("error take screenshot");
             }
             Log.w(TAG, String.format("perform: 第 %s 次未匹配到元素 ' %s ' .",i , this.toString()));
         }
         Log.i(TAG, String.format("perform: 开始第 %s 次匹配 ' %s ' .", times,this.toString()));
         this.viewInteraction.perform(viewActions);
-//        DoIt.delFile((String)Registor.unReg(key));
+        if (! isNone(imagePath)) Allure.removeAttachment(imagePath);
+
         return this;
     }
     public AdViewInteraction perform(final ViewAction... viewActions) {
         return this.perform(5 ,viewActions);
     }
-    public AdViewInteraction perform(boolean isTry ,final ViewAction... viewActions) {
+    public AdViewInteraction perform(boolean isTry , final ViewAction... viewActions) {
         if(isTry){
             try {
                 return perform(viewActions);
@@ -88,22 +91,23 @@ public class AdViewInteraction {
      * @param viewAssert
      * @return
      */
-    public AdViewInteraction check(final int times ,final ViewAssertion viewAssert){
-        sleep(200);
+    public AdViewInteraction check(final int times , final ViewAssertion viewAssert){
+        sleep(500);
+        String imagePath = "" ;
         for(int i=1; i<times ; i++){
             Log.i(TAG, String.format("check: 开始第 %s 次匹配 ' %s ' .",i,this.toString()));
             if(checkRight(viewAssert)){
-//                DoIt.delFile((String)Registor.unReg(key));
+                if (! isNone(imagePath)) Allure.removeAttachment(imagePath);
                 return this;
             }else if(i==2 ){
                 //执行截图并保存文件名
-//                Registor.reg( key , ((BaseTest)Registor.peekReg(BaseTest.class.toString())).takeScreenshot());
+                imagePath = Allure.addAttachment("error take screenshot");
             }
             Log.w(TAG, String.format("check: 第 %s 次未匹配到元素 ' %s ' .",i ,this.toString()));
         }
         Log.i(TAG, String.format("check: 开始第 %s 次匹配 ' %s ' .",times,this.toString()));
         this.viewInteraction.check(viewAssert);
-//        DoIt.delFile((String)Registor.unReg(key));
+        if (! isNone(imagePath)) Allure.removeAttachment(imagePath);
         return this;
     }
     /**
@@ -124,7 +128,7 @@ public class AdViewInteraction {
      * @param viewAssert
      * @return
      */
-    public AdViewInteraction check(boolean isTry ,final ViewAssertion viewAssert){
+    public AdViewInteraction check(boolean isTry , final ViewAssertion viewAssert){
         if(isTry){
             try {
                 return check(viewAssert);
@@ -163,7 +167,7 @@ public class AdViewInteraction {
      * 点击
      * @return
      */
-    public  AdViewInteraction click(){
+    public AdViewInteraction click(){
         return this.perform(ViewActions.click());
     }
 
@@ -172,7 +176,7 @@ public class AdViewInteraction {
      * @param text
      * @return
      */
-    public  AdViewInteraction replaceText(String text){
+    public AdViewInteraction replaceText(String text){
         return this.perform(ViewActions.replaceText(text));
     }
 
@@ -181,7 +185,7 @@ public class AdViewInteraction {
      * @param text
      * @return
      */
-    public  AdViewInteraction typeText(String text){
+    public AdViewInteraction typeText(String text){
         return this.perform(ViewActions.typeText(text));
     }
 
@@ -274,7 +278,7 @@ public class AdViewInteraction {
         WaitFor.waitForIdle(idle);
         return this;
     }
-    public AdViewInteraction waitFor(Idle idle ,long step, long time){
+    public AdViewInteraction waitFor(Idle idle , long step, long time){
         WaitFor.waitForIdle(idle ,step,time);
         return this;
     }

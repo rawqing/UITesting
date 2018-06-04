@@ -8,7 +8,6 @@ import android.webkit.WebView;
 import org.hamcrest.Matcher;
 import org.hamcrest.StringDescription;
 
-import static android.support.test.espresso.core.deps.guava.base.Preconditions.checkNotNull;
 import static android.support.test.espresso.matcher.ViewMatchers.assertThat;
 
 /**
@@ -43,9 +42,6 @@ public class CustomWebAssert {
      */
     public static <E> WebAssertion<E> customWebMatches(Atom<E> atom, final Matcher<E> resultMatcher,
                                                        final WebViewAssertions.ResultDescriber<? super E> resultDescriber) {
-        checkNotNull(resultMatcher);
-        checkNotNull(resultDescriber);
-        checkNotNull(atom);
         return new WebAssertion<E>(atom) {
             @Override
             public void checkResult(WebView view, E result) {

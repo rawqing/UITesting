@@ -3,8 +3,6 @@ package com.jlc.app.milk_mini.custom.handlers;
 import android.support.test.espresso.UiController;
 import android.support.test.espresso.ViewAction;
 import android.support.test.espresso.ViewInteraction;
-//import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -14,16 +12,14 @@ import com.jlc.app.milk_mini.shell.AdViewInteraction;
 
 import org.hamcrest.Matcher;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isAssignableFrom;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.isRoot;
-import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.any;
+
+//import android.support.v7.widget.RecyclerView;
 
 /**
  * Created by king on 16/12/12.

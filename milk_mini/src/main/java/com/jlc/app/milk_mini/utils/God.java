@@ -29,7 +29,6 @@ import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static android.support.test.espresso.core.deps.guava.base.Preconditions.checkNotNull;
 import static android.support.test.runner.lifecycle.Stage.RESUMED;
 import static com.jlc.app.milk_mini.constant.Conf.instrumentation;
 
@@ -306,7 +305,6 @@ public class God {
      * @return
      */
     public static View getMatchedView(View view , org.hamcrest.Matcher<View> matcher) {
-        checkNotNull(view);
         if (matcher.matches(view)) {
             return view;
         }

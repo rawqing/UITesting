@@ -23,7 +23,7 @@ import static org.hamcrest.core.IsNot.not;
  * Created by king on 16/11/16.
  */
 
-public class ToastElement implements Element<ViewInteraction>{
+public class ToastElement implements Element<ViewInteraction> {
 
     private String toastMsg;
     private ActivityTestRule activity;

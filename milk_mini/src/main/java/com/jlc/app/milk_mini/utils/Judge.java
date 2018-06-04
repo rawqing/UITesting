@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Rect;
 import android.support.test.espresso.matcher.ViewMatchers;
-//import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.View;
@@ -17,24 +16,35 @@ import com.jlc.app.milk_mini.elements.ToastElement;
 
 import org.hamcrest.Matcher;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Pattern;
 
 import static android.support.test.espresso.assertion.ViewAssertions.doesNotExist;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.withEffectiveVisibility;
 import static com.jlc.app.milk_mini.constant.Conf.instrumentation;
-import static com.jlc.app.milk_mini.custom.handlers.ViewInteractionHandler.getView;
 import static com.jlc.app.milk_mini.shell.Park.given;
 import static com.jlc.app.milk_mini.utils.God.getMatchedView;
 import static com.jlc.app.milk_mini.utils.God.getViewWith;
-import static org.hamcrest.Matchers.allOf;
+
+//import android.support.v7.widget.RecyclerView;
 
 /**
  * Created by king on 2016/9/5.
  */
 public class Judge {
     private static final String TAG = "jlc_" + Judge.class.getSimpleName();
+
+    public static <T> boolean isNone( T  t ) {
+
+        if(t instanceof String) return ((String) t).isEmpty();
+        if(t instanceof Collection) return ((Collection) t).isEmpty();
+        if(t instanceof Map)    return ((Map) t).isEmpty();
+
+        return t == null;
+    }
 
     /**
      * 判断给定名称的activity是否是任务栈顶的activity

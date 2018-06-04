@@ -1,1 +1,1 @@
-include ':app', ':milk'
+include ':app', ':milk', ':milk_mini'

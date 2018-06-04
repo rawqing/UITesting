@@ -10,7 +10,7 @@ public class WaitFor {
      * @param step 轮巡的时间步长 单位 ms
      * @param timeout 超时 单位 ms
      */
-    public static void waitForIdle(Idle idle ,long step ,long timeout) {
+    public static void waitForIdle(Idle idle , long step , long timeout) {
         while (timeout > 0) {
             if (idle.isIdle()) {
                 return;
