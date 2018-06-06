@@ -93,7 +93,7 @@ public class ToastElement implements Element<ViewInteraction> {
 
             return withMsgType(msgType).inRoot(matcher);
         }
-        return null;
+        return null ;
     }
 
     @Override
