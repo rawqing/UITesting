@@ -5,10 +5,7 @@ buildscript {
     ext.buildTools_version = '26.0.2'
     ext.build_version = '27.1.1'
     ext.espresso_version = '3.0.1'
-    ext.mvn_url = 'http://192.168.130.88:8081/nexus/content/repositories/releases/'
-//    ext.mvn_local = 'file://C:/Users/jlccsz/.m2/repository'
-    ext.mvn_local = 'file://~/.m2/repository'
-
+    ext.mvn_local = "file://${System.getenv("HOMEDRIVE") }${System.getenv("HOMEPATH") }/.m2/repository"
     repositories {
         google()
         jcenter()
@@ -27,13 +24,6 @@ allprojects {
         google()
         jcenter()
         mavenLocal()
-//        maven{
-//            url 'http://192.168.130.88:8081/nexus/content/groups/public/'
-//            credentials {
-//                username 'admin'
-//                password 'admin123'
-//            }
-//        }
     }
 }
 
