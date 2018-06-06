@@ -1,5 +1,6 @@
 package com.jlc.app.milk_mini.elements;
 
+import android.support.test.espresso.Root;
 import android.support.test.espresso.ViewInteraction;
 import android.support.test.rule.ActivityTestRule;
 
@@ -7,7 +8,10 @@ import com.jlc.app.milk_mini.constant.Conf;
 import com.jlc.app.milk_mini.shell.AdViewInteraction;
 import com.jlc.app.milk_mini.utils.God;
 
+import org.hamcrest.Matcher;
+
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.matcher.RootMatchers.isPlatformPopup;
 import static android.support.test.espresso.matcher.RootMatchers.withDecorView;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static com.jlc.app.milk_mini.custom.matchers.CustomMatcher.withContainText;
@@ -28,6 +32,7 @@ public class ToastElement implements Element<ViewInteraction> {
     private String toastMsg;
     private ActivityTestRule activity;
     private MsgType msgType = intact;
+    private Matcher<Root> rootMatcher;
 
     public ToastElement(String toastMsg, ActivityTestRule activity) {
         this.toastMsg = toastMsg;
@@ -58,26 +63,35 @@ public class ToastElement implements Element<ViewInteraction> {
         return  this;
     }
 
+    public ToastElement setRootMatcher(Matcher<Root> rootMatcher) {
+        this.rootMatcher = rootMatcher;
+        return this;
+    }
+
     @Override
     public String toString() {
         String string = "{";
         if(notEmpty(toastMsg))   string += "toastMsg='" + toastMsg + "', ";
         if(notEmpty(activity))  string += "activity='" + activity + "', ";
         if(notEmpty(msgType))  string += "msgType='" + msgType.name() + "', ";
+        if(notEmpty(rootMatcher))  string += "rootMatcher='" + rootMatcher.toString() + "', ";
         return string += '}';
     }
 
     @Override
     public ViewInteraction way() {
         if(notEmpty(toastMsg)){
-            if(notEmpty(activity)){
-                return withMsgType(msgType)
-                        .inRoot(withDecorView(not(is(activity.getActivity().getWindow().getDecorView()))));
+            Matcher<Root> matcher = null;
 
+            if (notEmpty(rootMatcher)) {
+                matcher = rootMatcher;
+            } else if (notEmpty(activity)) {
+                matcher = withDecorView(not(is(activity.getActivity().getWindow().getDecorView())));
             }else{
-                return withMsgType(msgType)
-                        .inRoot(withDecorView(not(is(God.getCurrentActivity(Conf.instrumentation).getWindow().getDecorView()))));
+                matcher = withDecorView(not(is(God.getCurrentActivity(Conf.instrumentation).getWindow().getDecorView())));
             }
+
+            return withMsgType(msgType).inRoot(matcher);
         }
         return null;
     }
