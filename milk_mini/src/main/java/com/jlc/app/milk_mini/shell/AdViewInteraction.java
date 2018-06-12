@@ -13,9 +13,12 @@ import com.jlc.app.milk_mini.custom.actions.CustomViewAction;
 import com.jlc.app.milk_mini.elements.Element;
 import com.jlc.app.milk_mini.idlingResource.different.Idle;
 import com.jlc.app.milk_mini.idlingResource.different.WaitFor;
+import com.jlc.app.milk_mini.utils.God;
 import com.yq.allure2_androidj.common.Allure;
 
 import org.hamcrest.Matcher;
+
+import java.util.Date;
 
 import static android.support.test.espresso.assertion.ViewAssertions.doesNotExist;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
@@ -60,7 +63,7 @@ public class AdViewInteraction {
                 return this;
             }else if(i==2 ){
                 //执行截图并保存文件名
-                imagePath = Allure.addAttachment("error take screenshot");
+                imagePath = Allure.addAttachment(God.getDateFormat(new Date()) + " | error take screenshot");
             }
             Log.w(TAG, String.format("perform: 第 %s 次未匹配到元素 ' %s ' .",i , this.toString()));
         }
@@ -101,7 +104,7 @@ public class AdViewInteraction {
                 return this;
             }else if(i==2 ){
                 //执行截图并保存文件名
-                imagePath = Allure.addAttachment("error take screenshot");
+                imagePath = Allure.addAttachment(God.getDateFormat(new Date()) + " | error take screenshot");
             }
             Log.w(TAG, String.format("check: 第 %s 次未匹配到元素 ' %s ' .",i ,this.toString()));
         }
@@ -275,10 +278,12 @@ public class AdViewInteraction {
      * @return
      */
     public AdViewInteraction waitFor(Idle idle){
-        WaitFor.waitForIdle(idle);
+        waitFor(idle, 500, 5000);
         return this;
     }
     public AdViewInteraction waitFor(Idle idle ,long step, long time){
+        //执行截图
+        Allure.addAttachment(God.getDateFormat(new Date()) + " | take screenshot with before wait.");
         WaitFor.waitForIdle(idle ,step,time);
         return this;
     }
@@ -301,58 +306,4 @@ public class AdViewInteraction {
         return viewElement == null ? viewInteraction.toString() : viewElement.toString();
     }
 
-    //    /**
-//     * @deprecated use {@link ViewsFinder#getViews(Matcher)}
-//     * 由于过度强依赖 , 过度反射, 故决定弃用.
-//     * 匹配到多个View时使用
-//     * 强依赖于{@link ViewInteraction#viewFinder};{@link ViewInteraction#uiController};{@link ViewInteraction#failureHandler}
-//     *          {@link ViewInteraction#mainThreadExecutor};{@link ViewInteraction#viewMatcher} .
-//     *          {@link android.support.test.espresso.base.ViewFinderImpl#viewMatcher};
-//     *          {@link android.support.test.espresso.base.ViewFinderImpl#rootViewProvider}
-//     * ViewInteraction.viewMatcher == ViewFinderImpl.viewMatcher
-//     * @return
-//     */
-//    public List<AdViewInteraction> getInteractionList(){
-//        List<AdViewInteraction> adViewInteractions = null;
-//        try {
-//            ViewFinder viewFinder = null;
-//            UiController uiController = null;
-//            FailureHandler failureHandler = null;
-//            Matcher<View> baseViewMatcher = null;
-//            Executor mainThreadExecutor = null;
-//            Field[] fields = getDecFields(viewInteraction);
-//            for(Field field : fields){
-//                switch (field.getName()){
-//                    case "viewFinder" :
-//                        viewFinder = (ViewFinder) field.get(viewInteraction);
-//                        break;
-//                    case "uiController" :
-//                        uiController = (UiController) field.get(viewInteraction);
-//                        break;
-//                    case "failureHandler" :
-//                        failureHandler = (FailureHandler) field.get(viewInteraction);
-//                        break;
-//                    case "viewMatcher" :
-//                        baseViewMatcher = (Matcher<View>) field.get(viewInteraction);
-//                        break;
-//                    case "mainThreadExecutor" :
-//                        mainThreadExecutor = (Executor) field.get(viewInteraction);
-//                        break;
-//                }
-//            }
-//            Provider<View> rootViewProvider = (Provider<View>) getFieldObject("rootViewProvider", viewFinder);
-//            ViewTracer viewTracer = new ViewTracer(baseViewMatcher, rootViewProvider);
-//
-//            ViewHandle viewHandle = new ViewHandle(uiController, mainThreadExecutor, failureHandler, baseViewMatcher, viewTracer);
-//
-//            List<View> views = viewHandle.getTargetViews();
-//            adViewInteractions = new ArrayList<>();
-//            for(View view : views){
-//                adViewInteractions.add(new AdViewInteraction(new ActivityElement().setMatchers(withView(view))));
-//            }
-//        }catch (Exception e ){
-//            e.printStackTrace();
-//        }
-//        return adViewInteractions;
-//    }
 }

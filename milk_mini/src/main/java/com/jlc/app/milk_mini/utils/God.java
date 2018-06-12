@@ -191,8 +191,15 @@ public class God {
 
         return cmpNameTemp.split(Pattern.quote("/"))[1].split(Pattern.quote("}"))[0];
     }
+    public static String getTopActivityName(){
+        return getTopActivityName(ctx);
+    }
 
-
+    /**
+     * 获取当前 app 的名称
+     * @param activity
+     * @return
+     */
     public static String getAppName(Activity activity){
         String s = "";
         try {
