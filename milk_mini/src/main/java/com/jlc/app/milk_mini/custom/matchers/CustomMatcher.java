@@ -635,7 +635,7 @@ public class CustomMatcher {
      */
     public static Matcher<View> withWildcardText(final String wildcardText){
         checkNotNull(wildcardText);
-        String regexText = wildcardText.replace("*",".*").replace("?",".?");;
+        String regexText = wildcardText.replace("*",".*").replace("?",".?");
         return withRegexText(regexText);
     }
 

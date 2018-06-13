@@ -43,6 +43,10 @@ public class ToastElement implements Element<ViewInteraction> {
         this.toastMsg = toastMsg;
         this.msgType = msgType;
     }
+    public ToastElement(String toastMsg ,Matcher<Root> rootMatcher){
+        this.toastMsg = toastMsg;
+        this.rootMatcher = rootMatcher;
+    }
     public ToastElement(String toastMsg) {
         this.toastMsg = toastMsg;
     }
