@@ -1,8 +1,12 @@
 package com.jlc.app.milk_mini.bTest.rules;
 
+import android.util.Log;
+
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
+
+import static com.jlc.app.milk_mini.constant.Conf.TAG;
 
 public class Retry implements TestRule {
     private int retryCount;
@@ -18,19 +22,23 @@ public class Retry implements TestRule {
             @Override
             public void evaluate() throws Throwable {
                 Throwable caughtThrowable = null;
-//implement retry logic here
+                //implement retry logic here
                 for (int i = 0; i <retryCount; i++) {
                     try {
+                        if (i>0){
+                            ActivityLife rt = new ActivityLife();
+                            rt.closeAllActivities();
+                        }
                         base.evaluate();
                         return;
                     } catch (Throwable t) {
                         caughtThrowable = t;
-                        System.err.println(description.getDisplayName()
-                                +": run" + (i + 1) +" failed");
+                        Log.e(TAG, description.getDisplayName()
+                                +": run " + (i + 1) +" failed !" ,t);
                     }
                 }
-                System.err.println(description.getDisplayName()
-                        +": giving up after" + retryCount +" failures");
+                Log.e(TAG, description.getDisplayName()
+                        +": giving up after " + retryCount +" failures !" ,caughtThrowable);
                 if (caughtThrowable != null) {
                     throw caughtThrowable;
                 }
