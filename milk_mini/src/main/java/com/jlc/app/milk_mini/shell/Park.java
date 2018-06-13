@@ -6,15 +6,20 @@ import android.support.test.espresso.ViewInteraction;
 import android.support.test.espresso.web.model.Atom;
 import android.view.View;
 
+import com.jlc.app.milk_mini.custom.handlers.ViewsFinder;
 import com.jlc.app.milk_mini.elements.ActivityElement;
 import com.jlc.app.milk_mini.elements.AtomElement;
 import com.jlc.app.milk_mini.elements.Element;
 
 import org.hamcrest.Matcher;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.web.sugar.Web.onWebView;
+import static com.jlc.app.milk_mini.custom.matchers.CustomMatcher.withView;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasEntry;
 import static org.hamcrest.Matchers.is;
@@ -24,6 +29,25 @@ import static org.hamcrest.Matchers.is;
  */
 
 public class Park {
+
+    /**
+     * 获取可匹配的所有 AdViewInteraction 实例
+     * @param matchers
+     * @return
+     */
+    public static List<AdViewInteraction> getAVIs(Matcher<View> matchers){
+        ViewsFinder vf = new ViewsFinder();
+        List<View> views = vf.getViews(matchers);
+        List<AdViewInteraction> avis = new ArrayList<>();
+        for (View v : views) {
+            avis.add(new AdViewInteraction(onView(withView(v))));
+        }
+        return avis;
+    }
+    public static List<AdViewInteraction> getAVIs(Element<Matcher<View>> element){
+        return getAVIs(element.way());
+    }
+
 
     public static <T> ViewInteraction getViewInteraction(Element<T> element) {
         T ele = element.way();
