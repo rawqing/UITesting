@@ -639,6 +639,11 @@ public class CustomMatcher {
         return withRegexText(regexText);
     }
 
+    /**
+     * 匹配包含字符串
+     * @param containText
+     * @return
+     */
     public static Matcher<View> withContainText(final String containText) {
         checkNotNull(containText);
         return new BoundedMatcher<View, TextView>(TextView.class) {

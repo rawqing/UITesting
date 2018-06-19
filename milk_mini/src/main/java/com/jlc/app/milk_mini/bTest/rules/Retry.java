@@ -2,6 +2,8 @@ package com.jlc.app.milk_mini.bTest.rules;
 
 import android.util.Log;
 
+import com.jlc.app.milk_mini.exception.AcceptableException;
+
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
@@ -32,6 +34,10 @@ public class Retry implements TestRule {
                         base.evaluate();
                         return;
                     } catch (Throwable t) {
+                        if (t instanceof AcceptableException) {
+                            Log.w(TAG, description.getDisplayName()+ ": ", t);
+                            return;
+                        }
                         caughtThrowable = t;
                         Log.e(TAG, description.getDisplayName()
                                 +": run " + (i + 1) +" failed !" ,t);

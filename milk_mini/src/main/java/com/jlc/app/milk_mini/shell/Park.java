@@ -18,6 +18,7 @@ import java.util.List;
 
 import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.web.sugar.Web.onWebView;
 import static com.jlc.app.milk_mini.custom.matchers.CustomMatcher.withView;
 import static org.hamcrest.Matchers.equalTo;
@@ -48,6 +49,30 @@ public class Park {
         return getAVIs(element.way());
     }
 
+    /**
+     * 从列表中筛选出符合条件的那些
+     * @param avis
+     * @param matchers
+     * @return
+     */
+    public static List<AdViewInteraction> matchedAVIs(List<AdViewInteraction> avis, Matcher<View> matchers){
+        List<AdViewInteraction> newAvis = new ArrayList<>();
+        for (AdViewInteraction avi : avis) {
+            if (avi.checkRight(matches(matchers))) {
+                newAvis.add(avi);
+            }
+        }
+        return newAvis;
+    }
+    public static List<AdViewInteraction> notMatchedAVIs(List<AdViewInteraction> avis, Matcher<View> matchers){
+        List<AdViewInteraction> newAvis = new ArrayList<>();
+        for (AdViewInteraction avi : avis) {
+            if (!avi.checkRight(matches(matchers))) {
+                newAvis.add(avi);
+            }
+        }
+        return newAvis;
+    }
 
     public static <T> ViewInteraction getViewInteraction(Element<T> element) {
         T ele = element.way();
