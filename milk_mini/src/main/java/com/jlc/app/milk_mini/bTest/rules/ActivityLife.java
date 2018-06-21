@@ -16,6 +16,8 @@ import android.support.test.runner.lifecycle.Stage;
 import android.util.Log;
 import android.view.WindowManager;
 
+import com.jlc.app.milk_mini.exception.TestingException;
+
 import java.lang.reflect.Method;
 import java.util.Collection;
 import java.util.HashSet;
@@ -101,7 +103,7 @@ public class ActivityLife<T>{
         int i = 0;
         while (closeActivity(instrumentation)) {
             if (i++ > NUMBER_OF_RETRIES) {
-                throw new AssertionError("Limit of retries excesses");
+                throw new TestingException("closeActivity: Limit of retries excesses");
             }
             Thread.sleep(200);
         }
