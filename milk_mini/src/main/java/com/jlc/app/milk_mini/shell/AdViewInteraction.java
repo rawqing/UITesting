@@ -12,6 +12,7 @@ import android.view.View;
 import com.jlc.app.milk_mini.custom.actions.CustomViewAction;
 import com.jlc.app.milk_mini.elements.Element;
 import com.jlc.app.milk_mini.idlingResource.different.Idle;
+import com.jlc.app.milk_mini.idlingResource.different.SelfIdle;
 import com.jlc.app.milk_mini.idlingResource.different.WaitFor;
 import com.jlc.app.milk_mini.utils.God;
 import com.yq.allure2_androidj.common.Allure;
@@ -289,17 +290,26 @@ public class AdViewInteraction {
     }
 
     /**
-     * 暂停time毫秒
-     * @param time
+     * 传递自身的等待
+     * @param idle
+     * @param step
+     * @param timeout
      * @return
      */
-    public AdViewInteraction pause(long time){
-        try {
-            Thread.sleep(time);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+    public AdViewInteraction waitFor(SelfIdle<AdViewInteraction> idle , long step, long timeout){
+        //执行截图
+        Allure.addAttachment(God.getDateFormat(new Date()) + " | take screenshot with before wait.");
+        while (timeout > 0) {
+            if (idle.isIdle(this)) {
+                return this;
+            }
+            sleep(step);
+            timeout -= step;
         }
         return this;
+    }
+    public AdViewInteraction waitFor(SelfIdle<AdViewInteraction> idle){
+        return waitFor(idle, 500, 5000);
     }
 
     public String toString() {
