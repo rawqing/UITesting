@@ -23,7 +23,4 @@ public class WaitFor {
         waitForIdle(idle,500,5000);
     }
 
-    public static void waitForIdle(SelfIdle idle , long step , long timeout) {
-
-    }
 }
