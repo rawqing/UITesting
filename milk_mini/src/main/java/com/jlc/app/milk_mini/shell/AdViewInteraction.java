@@ -289,29 +289,6 @@ public class AdViewInteraction {
         return this;
     }
 
-    /**
-     * 传递自身的等待
-     * @param idle
-     * @param step
-     * @param timeout
-     * @return
-     */
-    public AdViewInteraction waitFor(SelfIdle<AdViewInteraction> idle , long step, long timeout){
-        //执行截图
-        Allure.addAttachment(God.getDateFormat(new Date()) + " | take screenshot with before wait.");
-        while (timeout > 0) {
-            if (idle.isIdle(this)) {
-                return this;
-            }
-            sleep(step);
-            timeout -= step;
-        }
-        return this;
-    }
-    public AdViewInteraction waitFor(SelfIdle<AdViewInteraction> idle){
-        return waitFor(idle, 500, 5000);
-    }
-
     public String toString() {
         return viewElement == null ? viewInteraction.toString() : viewElement.toString();
     }
